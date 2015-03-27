@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         radioButtonController.setButtonsArray([button1!,button2!,button3!])
+        var currentButton = radioButtonController.selectedButton()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
