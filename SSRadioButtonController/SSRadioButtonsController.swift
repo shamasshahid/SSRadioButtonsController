@@ -59,6 +59,7 @@ class SSRadioButtonsController :NSObject
         if(sender.selected)
         {
             sender.selected = false
+            currentSelectedButton = nil
         }
         else
         {
@@ -70,6 +71,7 @@ class SSRadioButtonsController :NSObject
                 }
             }
             sender.selected = true
+            currentSelectedButton = sender
         }
     }
     
