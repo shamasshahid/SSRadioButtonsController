@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
-    
+
     var radioButtonController = SSRadioButtonsController()
     
     override func viewDidLoad() {
