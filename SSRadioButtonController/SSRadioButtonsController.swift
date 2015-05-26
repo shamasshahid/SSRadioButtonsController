@@ -13,68 +13,53 @@ class SSRadioButtonsController :NSObject
     private var buttonsArray = [UIButton]()
     private weak var currentSelectedButton:UIButton? = nil
     override init() {
-        
+
     }
-    
-    func addButton(aButton:UIButton)
-    {
+
+    func addButton(aButton: UIButton) {
         buttonsArray.append(aButton)
         aButton.addTarget(self, action: "pressed:", forControlEvents: UIControlEvents.TouchUpInside)
     }
-    
-    func removeButton(aButton:UIButton)
-    {
+
+    func removeButton(aButton: UIButton) {
         var iteration = 0
-        var iteratingButton:UIButton? = nil
-        for(iteration; iteration<buttonsArray.count;iteration++)
-        {
+        var iteratingButton: UIButton? = nil
+        for( ; iteration<buttonsArray.count; iteration++) {
             iteratingButton = buttonsArray[iteration]
-            if(iteratingButton == aButton)
-            {
+            if(iteratingButton == aButton) {
                 break
-            }
-            else
-            {
+            } else {
                 iteratingButton = nil
             }
         }
-        if(iteratingButton != nil)
-        {
+        if(iteratingButton != nil) {
             buttonsArray.removeAtIndex(iteration)
             iteratingButton!.removeTarget(self, action: "pressed:", forControlEvents: UIControlEvents.TouchUpInside)
+            if currentSelectedButton == iteratingButton {
+                currentSelectedButton = nil
+            }
         }
     }
-    
-    func setButtonsArray(aButtonsArray:[UIButton])
-    {
-        for aButton in aButtonsArray
-        {
+
+    func setButtonsArray(aButtonsArray: [UIButton]) {
+        for aButton in aButtonsArray {
             aButton.addTarget(self, action: "pressed:", forControlEvents: UIControlEvents.TouchUpInside)
         }
         buttonsArray = aButtonsArray
     }
-    
-    func pressed(sender:UIButton)
-    {
-        if(sender.selected)
-        {
+
+    func pressed(sender: UIButton) {
+        if(sender.selected) {
             sender.selected = false
-        }
-        else
-        {
-            for aButton in buttonsArray
-            {
-                if aButton != sender
-                {
-                    aButton.selected = false
-                }
+        } else {
+            for aButton in buttonsArray {
+                aButton.selected = false
             }
             sender.selected = true
         }
     }
-    
-    func selectedButton() ->UIButton?
-    {
+
+    func selectedButton() -> UIButton? {
         return currentSelectedButton
     }
 }

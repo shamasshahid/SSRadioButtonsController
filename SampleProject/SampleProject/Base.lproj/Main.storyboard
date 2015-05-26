@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,46 +16,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gS9-tH-4k7">
-                                <rect key="frame" x="210" y="28" width="180" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" title="Selected"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTu-Q8-1SF" customClass="SSRadioButton" customModule="SampleProject" customModuleProvider="target">
+                                <rect key="frame" x="210" y="285" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GUb-YE-Okt"/>
+                                    <constraint firstAttribute="width" constant="180" id="fps-CH-7vF"/>
+                                </constraints>
+                                <state key="normal" title="Button looooooooong text"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                        <color key="value" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXu-am-aoM">
-                                <rect key="frame" x="210" y="66" width="180" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfK-Ld-qqt">
+                                <rect key="frame" x="210" y="323" width="180" height="30"/>
+                                <state key="normal" title="System Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="selected" title="Selected"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zC2-sP-Q6B">
-                                <rect key="frame" x="210" y="104" width="180" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrx-Ks-zBi" customClass="SSRadioButton" customModule="SampleProject" customModuleProvider="target">
+                                <rect key="frame" x="210" y="247" width="180" height="30"/>
+                                <state key="normal" title="Button 1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="selected" title="Selected"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gS9-tH-4k7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="7mu-C2-6s6"/>
-                            <constraint firstAttribute="centerX" secondItem="gS9-tH-4k7" secondAttribute="centerX" id="9hd-Ag-e32"/>
-                            <constraint firstItem="zC2-sP-Q6B" firstAttribute="width" secondItem="gS9-tH-4k7" secondAttribute="width" id="FWz-h7-mqJ"/>
-                            <constraint firstAttribute="centerX" secondItem="zC2-sP-Q6B" secondAttribute="centerX" id="H7Z-na-jlw"/>
-                            <constraint firstAttribute="centerX" secondItem="ZXu-am-aoM" secondAttribute="centerX" id="Yh9-8n-Lwi"/>
-                            <constraint firstItem="gS9-tH-4k7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="aiU-hF-djV"/>
-                            <constraint firstItem="zC2-sP-Q6B" firstAttribute="top" secondItem="ZXu-am-aoM" secondAttribute="bottom" constant="8" id="cT4-1t-C9y"/>
-                            <constraint firstItem="ZXu-am-aoM" firstAttribute="top" secondItem="gS9-tH-4k7" secondAttribute="bottom" constant="8" id="ioh-8b-ilm"/>
-                            <constraint firstItem="gS9-tH-4k7" firstAttribute="width" secondItem="ZXu-am-aoM" secondAttribute="width" id="pvn-eE-OOJ"/>
+                            <constraint firstAttribute="centerY" secondItem="zTu-Q8-1SF" secondAttribute="centerY" id="CFj-nB-ueS"/>
+                            <constraint firstItem="UfK-Ld-qqt" firstAttribute="top" secondItem="zTu-Q8-1SF" secondAttribute="bottom" constant="8" id="DVi-Ws-4Hv"/>
+                            <constraint firstAttribute="centerX" secondItem="Wrx-Ks-zBi" secondAttribute="centerX" id="G9K-TK-VsH"/>
+                            <constraint firstAttribute="centerX" secondItem="zTu-Q8-1SF" secondAttribute="centerX" id="Gbh-tx-N0k"/>
+                            <constraint firstAttribute="centerX" secondItem="UfK-Ld-qqt" secondAttribute="centerX" id="IvT-xv-0Un"/>
+                            <constraint firstItem="UfK-Ld-qqt" firstAttribute="width" secondItem="zTu-Q8-1SF" secondAttribute="width" id="fm7-nw-Vjm"/>
+                            <constraint firstItem="zTu-Q8-1SF" firstAttribute="top" secondItem="Wrx-Ks-zBi" secondAttribute="bottom" constant="8" id="mui-N9-zey"/>
+                            <constraint firstItem="Wrx-Ks-zBi" firstAttribute="width" secondItem="zTu-Q8-1SF" secondAttribute="width" id="wSu-Yx-OzC"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button1" destination="gS9-tH-4k7" id="mlT-Lz-1ja"/>
-                        <outlet property="button2" destination="ZXu-am-aoM" id="DDe-AE-6CC"/>
-                        <outlet property="button3" destination="zC2-sP-Q6B" id="5Ky-Kz-UUM"/>
+                        <outlet property="button1" destination="Wrx-Ks-zBi" id="yeU-vj-IWn"/>
+                        <outlet property="button2" destination="zTu-Q8-1SF" id="2Gj-Fo-pSP"/>
+                        <outlet property="button3" destination="UfK-Ld-qqt" id="1JZ-kE-0l7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
