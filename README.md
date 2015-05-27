@@ -1,6 +1,8 @@
 # SSRadioButtonsController
-A Radio Button Controller class for iOS written in Swift
+A Radio Button Controller class for iOS written in Swift. 
 All you need to do is to create an SSRadioButtonController object and add your UIButtons to it. It will automatically handle selecting and deselecting without interfering with your own implementations. 
+
+![Demo](https://github.com/shamasshahid/SSRadioButtonsController/blob/master/demoRadioButtons.gif?raw=true)
 
 ###Sample Code
 A sample code would look like this
