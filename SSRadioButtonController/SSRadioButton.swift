@@ -12,7 +12,7 @@ import UIKit
 
 class SSRadioButton: UIButton {
 
-    var circleLayer = CAShapeLayer()
+    private var circleLayer = CAShapeLayer()
     override var selected: Bool {
         didSet {
             toggleButon()
@@ -35,7 +35,7 @@ class SSRadioButton: UIButton {
         }
     }
 
-    func circleFrame() -> CGRect {
+    private func circleFrame() -> CGRect {
         var circleFrame = CGRect(x: 0, y: 0, width: 2*circleRadius, height: 2*circleRadius)
         circleFrame.origin.x = 0 + circleLayer.lineWidth
         circleFrame.origin.y = bounds.height/2 - circleFrame.height/2
@@ -52,7 +52,7 @@ class SSRadioButton: UIButton {
         initialize()
     }
 
-    func initialize() {
+    private func initialize() {
         circleLayer.frame = bounds
         circleLayer.lineWidth = 2
         circleLayer.fillColor = UIColor.clearColor().CGColor
@@ -70,7 +70,7 @@ class SSRadioButton: UIButton {
         }
     }
 
-    func circlePath() -> UIBezierPath {
+    private func circlePath() -> UIBezierPath {
         return UIBezierPath(ovalInRect: circleFrame())
     }
 
