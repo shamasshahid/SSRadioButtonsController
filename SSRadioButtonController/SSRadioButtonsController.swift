@@ -56,11 +56,13 @@ class SSRadioButtonsController :NSObject
     func pressed(sender: UIButton) {
         if(sender.selected) {
             sender.selected = false
+            currentSelectedButton = nil
         } else {
             for aButton in buttonsArray {
                 aButton.selected = false
             }
             sender.selected = true
+            currentSelectedButton = sender
         }
     }
 
