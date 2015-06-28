@@ -15,8 +15,12 @@ class SSRadioButtonsController : NSObject
     private weak var currentSelectedButton:UIButton? = nil
     var shouldLetDeSelect = false
 
-    override init() {
-
+    init(buttons: UIButton...) {
+        super.init()
+        for aButton in buttons {
+            aButton.addTarget(self, action: "pressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        }
+        self.buttonsArray = buttons
     }
 
     func addButton(aButton: UIButton) {
