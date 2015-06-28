@@ -12,7 +12,9 @@ import UIKit
 
 class SSRadioButton: UIButton {
 
-    var circleLayer = CAShapeLayer()
+
+    private var circleLayer = CAShapeLayer()
+    private var fillCircleLayer = CAShapeLayer()
     override var selected: Bool {
         didSet {
             toggleButon()
@@ -58,15 +60,20 @@ class SSRadioButton: UIButton {
         circleLayer.fillColor = UIColor.clearColor().CGColor
         circleLayer.strokeColor = circleColor.CGColor
         layer.addSublayer(circleLayer)
+        fillCircleLayer.frame = bounds
+        fillCircleLayer.lineWidth = 2
+        fillCircleLayer.fillColor = UIColor.clearColor().CGColor
+        fillCircleLayer.strokeColor = UIColor.clearColor().CGColor
+        layer.addSublayer(fillCircleLayer)
         self.titleEdgeInsets = UIEdgeInsetsMake(0, (2*circleRadius + 4*circleLayer.lineWidth), 0, 0)
         self.toggleButon()
     }
 
     func toggleButon() {
         if self.selected {
-            circleLayer.fillColor = circleColor.CGColor
+            fillCircleLayer.fillColor = circleColor.CGColor
         } else {
-            circleLayer.fillColor = UIColor.clearColor().CGColor
+            fillCircleLayer.fillColor = UIColor.clearColor().CGColor
         }
     }
 
@@ -74,10 +81,16 @@ class SSRadioButton: UIButton {
         return UIBezierPath(ovalInRect: circleFrame())
     }
 
+    private func fillCirclePath() -> UIBezierPath {
+        return UIBezierPath(ovalInRect: CGRectInset(circleFrame(), 2, 2))
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         circleLayer.frame = bounds
         circleLayer.path = circlePath().CGPath
+        fillCircleLayer.frame = bounds
+        fillCircleLayer.path = fillCirclePath().CGPath
     }
 
     override func prepareForInterfaceBuilder() {

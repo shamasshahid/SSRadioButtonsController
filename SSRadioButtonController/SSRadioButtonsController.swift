@@ -8,10 +8,13 @@
 
 import Foundation
 import UIKit
-class SSRadioButtonsController :NSObject
+
+class SSRadioButtonsController : NSObject
 {
     private var buttonsArray = [UIButton]()
     private weak var currentSelectedButton:UIButton? = nil
+    var shouldLetDeSelect = false
+
     override init() {
 
     }
@@ -50,8 +53,10 @@ class SSRadioButtonsController :NSObject
 
     func pressed(sender: UIButton) {
         if(sender.selected) {
-            sender.selected = false
-            currentSelectedButton = nil
+            if shouldLetDeSelect {
+                sender.selected = false
+                currentSelectedButton = nil
+            }
         } else {
             for aButton in buttonsArray {
                 aButton.selected = false
