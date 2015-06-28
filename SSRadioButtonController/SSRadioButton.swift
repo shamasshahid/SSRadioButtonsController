@@ -19,12 +19,18 @@ class SSRadioButton: UIButton {
             toggleButon()
         }
     }
+    /**
+        Color of the radio button circle. Default value is UIColor red.
+    */
     @IBInspectable var circleColor: UIColor = UIColor.redColor() {
         didSet {
             circleLayer.strokeColor = circleColor.CGColor
             self.toggleButon()
         }
     }
+    /**
+        Radius of RadioButton circle.
+    */
     @IBInspectable var circleRadius: CGFloat = 5.0
     @IBInspectable var cornerRadius: CGFloat {
         get {
@@ -64,10 +70,12 @@ class SSRadioButton: UIButton {
         fillCircleLayer.fillColor = UIColor.clearColor().CGColor
         fillCircleLayer.strokeColor = UIColor.clearColor().CGColor
         layer.addSublayer(fillCircleLayer)
-        self.titleEdgeInsets = UIEdgeInsetsMake(0, (2*circleRadius + 4*circleLayer.lineWidth), 0, 0)
+        self.titleEdgeInsets = UIEdgeInsetsMake(0, (4*circleRadius + 4*circleLayer.lineWidth), 0, 0)
         self.toggleButon()
     }
-
+    /**
+        Toggles selected state of the button.
+    */
     func toggleButon() {
         if self.selected {
             fillCircleLayer.fillColor = circleColor.CGColor
@@ -90,6 +98,7 @@ class SSRadioButton: UIButton {
         circleLayer.path = circlePath().CGPath
         fillCircleLayer.frame = bounds
         fillCircleLayer.path = fillCirclePath().CGPath
+        self.titleEdgeInsets = UIEdgeInsetsMake(0, (2*circleRadius + 4*circleLayer.lineWidth), 0, 0)
     }
 
     override func prepareForInterfaceBuilder() {
