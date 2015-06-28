@@ -13,17 +13,24 @@ import UIKit
 class SSRadioButton: UIButton {
 
     private var circleLayer = CAShapeLayer()
+    private var fillCircleLayer = CAShapeLayer()
     override var selected: Bool {
         didSet {
             toggleButon()
         }
     }
+    /**
+        Color of the radio button circle. Default value is UIColor red.
+    */
     @IBInspectable var circleColor: UIColor = UIColor.redColor() {
         didSet {
             circleLayer.strokeColor = circleColor.CGColor
             self.toggleButon()
         }
     }
+    /**
+        Radius of RadioButton circle.
+    */
     @IBInspectable var circleRadius: CGFloat = 5.0
     @IBInspectable var cornerRadius: CGFloat {
         get {
@@ -58,15 +65,22 @@ class SSRadioButton: UIButton {
         circleLayer.fillColor = UIColor.clearColor().CGColor
         circleLayer.strokeColor = circleColor.CGColor
         layer.addSublayer(circleLayer)
-        self.titleEdgeInsets = UIEdgeInsetsMake(0, (2*circleRadius + 4*circleLayer.lineWidth), 0, 0)
+        fillCircleLayer.frame = bounds
+        fillCircleLayer.lineWidth = 2
+        fillCircleLayer.fillColor = UIColor.clearColor().CGColor
+        fillCircleLayer.strokeColor = UIColor.clearColor().CGColor
+        layer.addSublayer(fillCircleLayer)
+        self.titleEdgeInsets = UIEdgeInsetsMake(0, (4*circleRadius + 4*circleLayer.lineWidth), 0, 0)
         self.toggleButon()
     }
-
+    /**
+        Toggles selected state of the button.
+    */
     func toggleButon() {
         if self.selected {
-            circleLayer.fillColor = circleColor.CGColor
+            fillCircleLayer.fillColor = circleColor.CGColor
         } else {
-            circleLayer.fillColor = UIColor.clearColor().CGColor
+            fillCircleLayer.fillColor = UIColor.clearColor().CGColor
         }
     }
 
@@ -74,10 +88,17 @@ class SSRadioButton: UIButton {
         return UIBezierPath(ovalInRect: circleFrame())
     }
 
+    private func fillCirclePath() -> UIBezierPath {
+        return UIBezierPath(ovalInRect: CGRectInset(circleFrame(), 2, 2))
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         circleLayer.frame = bounds
         circleLayer.path = circlePath().CGPath
+        fillCircleLayer.frame = bounds
+        fillCircleLayer.path = fillCirclePath().CGPath
+        self.titleEdgeInsets = UIEdgeInsetsMake(0, (2*circleRadius + 4*circleLayer.lineWidth), 0, 0)
     }
 
     override func prepareForInterfaceBuilder() {
