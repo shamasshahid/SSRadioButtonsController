@@ -31,7 +31,7 @@ class SSRadioButtonsController : NSObject
     /**
         Variadic parameter init that accepts UIButtons.
 
-        :param: buttons Buttons that should behave as Radio Buttons
+        - parameter buttons: Buttons that should behave as Radio Buttons
     */
     init(buttons: UIButton...) {
         super.init()
@@ -43,7 +43,7 @@ class SSRadioButtonsController : NSObject
     /**
         Add a UIButton to Controller
 
-        :param: button Add the button to controller.
+        - parameter button: Add the button to controller.
     */
     func addButton(aButton: UIButton) {
         buttonsArray.append(aButton)
@@ -52,7 +52,7 @@ class SSRadioButtonsController : NSObject
     /** 
         Remove a UIButton from controller.
 
-        :param: button Button to be removed from controller.
+        - parameter button: Button to be removed from controller.
     */
     func removeButton(aButton: UIButton) {
         var iteration = 0
@@ -76,7 +76,7 @@ class SSRadioButtonsController : NSObject
     /**
         Set an array of UIButons to behave as controller.
         
-        :param: buttonArray Array of buttons
+        - parameter buttonArray: Array of buttons
     */
     func setButtonsArray(aButtonsArray: [UIButton]) {
         for aButton in aButtonsArray {
@@ -103,7 +103,7 @@ class SSRadioButtonsController : NSObject
     /**
         Get the currently selected button.
     
-        :returns: Currenlty selected button.
+        - returns: Currenlty selected button.
     */
     func selectedButton() -> UIButton? {
         return currentSelectedButton
