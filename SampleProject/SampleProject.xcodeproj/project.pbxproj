@@ -171,6 +171,8 @@
 		2D5074341AC546BB005AD163 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Al Shamas Tufail";
 				TargetAttributes = {

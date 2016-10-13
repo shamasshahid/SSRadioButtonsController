@@ -27,7 +27,7 @@ class ViewController: UIViewController, SSRadioButtonControllerDelegate {
     }
 
     func didSelectButton(aButton: UIButton?) {
-        println(aButton)
+        print(aButton)
     }
 
     override func didReceiveMemoryWarning() {
