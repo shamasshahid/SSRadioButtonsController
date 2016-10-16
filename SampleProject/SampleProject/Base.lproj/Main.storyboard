@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,56 +15,71 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTu-Q8-1SF" customClass="SSRadioButton" customModule="SampleProject" customModuleProvider="target">
-                                <rect key="frame" x="210" y="285" width="180" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="GUb-YE-Okt"/>
-                                    <constraint firstAttribute="width" constant="180" id="fps-CH-7vF"/>
-                                </constraints>
-                                <state key="normal" title="Button looooooooong text"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
-                                        <color key="value" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="circleRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfK-Ld-qqt">
-                                <rect key="frame" x="210" y="323" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bn2-2T-754"/>
+                                </constraints>
                                 <state key="normal" title="System Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrx-Ks-zBi" customClass="SSRadioButton" customModule="SampleProject" customModuleProvider="target">
-                                <rect key="frame" x="210" y="247" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3mz-99-V6B"/>
+                                </constraints>
                                 <state key="normal" title="Button 1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
-                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="circleRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zTu-Q8-1SF" customClass="SSRadioButton" customModule="SampleProject" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="FXe-R0-MQq"/>
+                                    <constraint firstAttribute="height" constant="90" id="GUb-YE-Okt"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="MHx-YT-obB"/>
+                                    <constraint firstAttribute="height" id="n7g-6c-v2t"/>
+                                </constraints>
+                                <state key="normal" title="Button looooooooong  looooooooong looooooooong looooooooong looooooooong text"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                        <color key="value" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GUb-YE-Okt"/>
+                                        <exclude reference="n7g-6c-v2t"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="zTu-Q8-1SF" secondAttribute="centerY" id="CFj-nB-ueS"/>
-                            <constraint firstItem="UfK-Ld-qqt" firstAttribute="top" secondItem="zTu-Q8-1SF" secondAttribute="bottom" constant="8" id="DVi-Ws-4Hv"/>
-                            <constraint firstAttribute="centerX" secondItem="Wrx-Ks-zBi" secondAttribute="centerX" id="G9K-TK-VsH"/>
-                            <constraint firstAttribute="centerX" secondItem="zTu-Q8-1SF" secondAttribute="centerX" id="Gbh-tx-N0k"/>
-                            <constraint firstAttribute="centerX" secondItem="UfK-Ld-qqt" secondAttribute="centerX" id="IvT-xv-0Un"/>
-                            <constraint firstItem="UfK-Ld-qqt" firstAttribute="width" secondItem="zTu-Q8-1SF" secondAttribute="width" id="fm7-nw-Vjm"/>
-                            <constraint firstItem="zTu-Q8-1SF" firstAttribute="top" secondItem="Wrx-Ks-zBi" secondAttribute="bottom" constant="8" id="mui-N9-zey"/>
-                            <constraint firstItem="Wrx-Ks-zBi" firstAttribute="width" secondItem="zTu-Q8-1SF" secondAttribute="width" id="wSu-Yx-OzC"/>
+                            <constraint firstItem="UfK-Ld-qqt" firstAttribute="leading" secondItem="zTu-Q8-1SF" secondAttribute="leading" id="6Dx-Qp-v5V"/>
+                            <constraint firstItem="Wrx-Ks-zBi" firstAttribute="trailing" secondItem="zTu-Q8-1SF" secondAttribute="trailing" id="9eB-cJ-84j"/>
+                            <constraint firstItem="UfK-Ld-qqt" firstAttribute="trailing" secondItem="zTu-Q8-1SF" secondAttribute="trailing" id="M1U-iZ-xd0"/>
+                            <constraint firstItem="UfK-Ld-qqt" firstAttribute="width" secondItem="zTu-Q8-1SF" secondAttribute="width" id="Ni7-Zk-6im"/>
+                            <constraint firstItem="UfK-Ld-qqt" firstAttribute="centerX" secondItem="zTu-Q8-1SF" secondAttribute="centerX" id="Nxz-yJ-ciR"/>
+                            <constraint firstItem="UfK-Ld-qqt" firstAttribute="top" secondItem="zTu-Q8-1SF" secondAttribute="bottom" constant="8" id="PhO-fI-3Sb"/>
+                            <constraint firstItem="Wrx-Ks-zBi" firstAttribute="leading" secondItem="zTu-Q8-1SF" secondAttribute="leading" id="cFm-Ae-HSn"/>
+                            <constraint firstItem="Wrx-Ks-zBi" firstAttribute="width" secondItem="zTu-Q8-1SF" secondAttribute="width" id="hTh-h6-8sd"/>
+                            <constraint firstItem="zTu-Q8-1SF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ntH-z4-Vg3"/>
+                            <constraint firstItem="zTu-Q8-1SF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="osH-m6-sbE"/>
+                            <constraint firstItem="Wrx-Ks-zBi" firstAttribute="centerX" secondItem="zTu-Q8-1SF" secondAttribute="centerX" id="ryu-TX-qZJ"/>
+                            <constraint firstItem="zTu-Q8-1SF" firstAttribute="top" secondItem="Wrx-Ks-zBi" secondAttribute="bottom" constant="8" id="ww4-zM-w8Y"/>
                         </constraints>
                     </view>
                     <connections>

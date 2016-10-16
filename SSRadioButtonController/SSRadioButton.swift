@@ -12,9 +12,9 @@ import UIKit
 
 class SSRadioButton: UIButton {
 
-    private var circleLayer = CAShapeLayer()
-    private var fillCircleLayer = CAShapeLayer()
-    override var selected: Bool {
+    fileprivate var circleLayer = CAShapeLayer()
+    fileprivate var fillCircleLayer = CAShapeLayer()
+    override var isSelected: Bool {
         didSet {
             toggleButon()
         }
@@ -22,9 +22,9 @@ class SSRadioButton: UIButton {
     /**
         Color of the radio button circle. Default value is UIColor red.
     */
-    @IBInspectable var circleColor: UIColor = UIColor.redColor() {
+    @IBInspectable var circleColor: UIColor = UIColor.red {
         didSet {
-            circleLayer.strokeColor = circleColor.CGColor
+            circleLayer.strokeColor = circleColor.cgColor
             self.toggleButon()
         }
     }
@@ -42,7 +42,7 @@ class SSRadioButton: UIButton {
         }
     }
 
-    private func circleFrame() -> CGRect {
+    fileprivate func circleFrame() -> CGRect {
         var circleFrame = CGRect(x: 0, y: 0, width: 2*circleRadius, height: 2*circleRadius)
         circleFrame.origin.x = 0 + circleLayer.lineWidth
         circleFrame.origin.y = bounds.height/2 - circleFrame.height/2
@@ -59,16 +59,16 @@ class SSRadioButton: UIButton {
         initialize()
     }
 
-    private func initialize() {
+    fileprivate func initialize() {
         circleLayer.frame = bounds
         circleLayer.lineWidth = 2
-        circleLayer.fillColor = UIColor.clearColor().CGColor
-        circleLayer.strokeColor = circleColor.CGColor
+        circleLayer.fillColor = UIColor.clear.cgColor
+        circleLayer.strokeColor = circleColor.cgColor
         layer.addSublayer(circleLayer)
         fillCircleLayer.frame = bounds
         fillCircleLayer.lineWidth = 2
-        fillCircleLayer.fillColor = UIColor.clearColor().CGColor
-        fillCircleLayer.strokeColor = UIColor.clearColor().CGColor
+        fillCircleLayer.fillColor = UIColor.clear.cgColor
+        fillCircleLayer.strokeColor = UIColor.clear.cgColor
         layer.addSublayer(fillCircleLayer)
         self.titleEdgeInsets = UIEdgeInsetsMake(0, (4*circleRadius + 4*circleLayer.lineWidth), 0, 0)
         self.toggleButon()
@@ -77,27 +77,27 @@ class SSRadioButton: UIButton {
         Toggles selected state of the button.
     */
     func toggleButon() {
-        if self.selected {
-            fillCircleLayer.fillColor = circleColor.CGColor
+        if self.isSelected {
+            fillCircleLayer.fillColor = circleColor.cgColor
         } else {
-            fillCircleLayer.fillColor = UIColor.clearColor().CGColor
+            fillCircleLayer.fillColor = UIColor.clear.cgColor
         }
     }
 
-    private func circlePath() -> UIBezierPath {
-        return UIBezierPath(ovalInRect: circleFrame())
+    fileprivate func circlePath() -> UIBezierPath {
+        return UIBezierPath(ovalIn: circleFrame())
     }
 
-    private func fillCirclePath() -> UIBezierPath {
-        return UIBezierPath(ovalInRect: CGRectInset(circleFrame(), 2, 2))
+    fileprivate func fillCirclePath() -> UIBezierPath {
+        return UIBezierPath(ovalIn: circleFrame().insetBy(dx: 2, dy: 2))
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         circleLayer.frame = bounds
-        circleLayer.path = circlePath().CGPath
+        circleLayer.path = circlePath().cgPath
         fillCircleLayer.frame = bounds
-        fillCircleLayer.path = fillCirclePath().CGPath
+        fillCircleLayer.path = fillCirclePath().cgPath
         self.titleEdgeInsets = UIEdgeInsetsMake(0, (2*circleRadius + 4*circleLayer.lineWidth), 0, 0)
     }
 
