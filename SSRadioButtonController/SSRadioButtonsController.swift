@@ -22,7 +22,7 @@ import UIKit
 class SSRadioButtonsController : NSObject
 {
     fileprivate var buttonsArray = [UIButton]()
-    fileprivate weak var currentSelectedButton:UIButton? = nil
+//    fileprivate weak var currentSelectedButton:UIButton? = nil
     weak var delegate : SSRadioButtonControllerDelegate? = nil
     /**
         Set whether a selected radio button can be deselected or not. Default value is false.
@@ -64,9 +64,6 @@ class SSRadioButtonsController : NSObject
             buttonsArray.remove(at: buttonsArray.index(of: iteratingButton!)!)
             iteratingButton!.removeTarget(self, action: #selector(SSRadioButtonsController.pressed(_:)), for: UIControlEvents.touchUpInside)
             iteratingButton!.isSelected = false
-            if currentSelectedButton == iteratingButton {
-                currentSelectedButton = nil
-            }
         }
     }
     /**
@@ -82,6 +79,7 @@ class SSRadioButtonsController : NSObject
     }
 
     func pressed(_ sender: UIButton) {
+        var currentSelectedButton: UIButton? = nil
         if(sender.isSelected) {
             if shouldLetDeSelect {
                 sender.isSelected = false
@@ -102,6 +100,8 @@ class SSRadioButtonsController : NSObject
         - returns: Currenlty selected button.
     */
     func selectedButton() -> UIButton? {
-        return currentSelectedButton
+        guard let index = buttonsArray.index(where: { button in button.isSelected }) else { return nil }
+        
+        return buttonsArray[index]
     }
 }
