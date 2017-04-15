@@ -16,13 +16,12 @@ import UIKit
     is called with a nil.
     
     */
-    @objc optional func didSelectButton(_ aButton: UIButton?)
+    @objc func didSelectButton(selectedButton: UIButton?)
 }
 
 class SSRadioButtonsController : NSObject
 {
     fileprivate var buttonsArray = [UIButton]()
-//    fileprivate weak var currentSelectedButton:UIButton? = nil
     weak var delegate : SSRadioButtonControllerDelegate? = nil
     /**
         Set whether a selected radio button can be deselected or not. Default value is false.
@@ -92,7 +91,7 @@ class SSRadioButtonsController : NSObject
             sender.isSelected = true
             currentSelectedButton = sender
         }
-        delegate?.didSelectButton?(currentSelectedButton)
+        delegate?.didSelectButton(selectedButton: currentSelectedButton)
     }
     /**
         Get the currently selected button.
