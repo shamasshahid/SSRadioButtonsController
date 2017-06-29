@@ -26,10 +26,15 @@ class ViewController: UIViewController, SSRadioButtonControllerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    func didSelectButton(selectedButton: UIButton?)
-    {
-        NSLog(" \(selectedButton)" )
+    @IBAction func btnTableView(_ sender: Any) {
+        self.navigationController?.pushViewController(TableViewController(), animated: true)
+        
+        
     }
+    func didSelectButton(selectedButton: UIButton?, index: Int) {
+        NSLog("Index: \(index) \(String(describing: selectedButton))" )
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1A7373771B09218100CB5FBC /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7373761B09218100CB5FBC /* SSRadioButton.swift */; };
+		212E10841F04F21A00AE5923 /* SSRadioButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E10831F04F21A00AE5923 /* SSRadioButtonModel.swift */; };
+		212E10861F04F3BD00AE5923 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E10851F04F3BD00AE5923 /* TableViewController.swift */; };
+		212E10891F04F3FF00AE5923 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E10871F04F3FF00AE5923 /* TableViewCell.swift */; };
+		212E108A1F04F3FF00AE5923 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 212E10881F04F3FF00AE5923 /* TableViewCell.xib */; };
 		2D5074421AC546BB005AD163 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5074411AC546BB005AD163 /* AppDelegate.swift */; };
 		2D5074441AC546BB005AD163 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5074431AC546BB005AD163 /* ViewController.swift */; };
 		2D5074471AC546BB005AD163 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5074451AC546BB005AD163 /* Main.storyboard */; };
@@ -29,6 +33,10 @@
 
 /* Begin PBXFileReference section */
 		1A7373761B09218100CB5FBC /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
+		212E10831F04F21A00AE5923 /* SSRadioButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButtonModel.swift; sourceTree = "<group>"; };
+		212E10851F04F3BD00AE5923 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		212E10871F04F3FF00AE5923 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		212E10881F04F3FF00AE5923 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		2D50743C1AC546BB005AD163 /* SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5074401AC546BB005AD163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D5074411AC546BB005AD163 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +92,9 @@
 			children = (
 				2D5074411AC546BB005AD163 /* AppDelegate.swift */,
 				2D5074431AC546BB005AD163 /* ViewController.swift */,
+				212E10851F04F3BD00AE5923 /* TableViewController.swift */,
+				212E10871F04F3FF00AE5923 /* TableViewCell.swift */,
+				212E10881F04F3FF00AE5923 /* TableViewCell.xib */,
 				2D5074451AC546BB005AD163 /* Main.storyboard */,
 				2D5074481AC546BB005AD163 /* Images.xcassets */,
 				2D50744A1AC546BB005AD163 /* LaunchScreen.xib */,
@@ -122,6 +133,7 @@
 			children = (
 				2D5074621AC54740005AD163 /* SSRadioButtonsController.swift */,
 				1A7373761B09218100CB5FBC /* SSRadioButton.swift */,
+				212E10831F04F21A00AE5923 /* SSRadioButtonModel.swift */,
 			);
 			name = SSRadioButtonController;
 			path = ../SSRadioButtonController;
@@ -178,6 +190,7 @@
 				TargetAttributes = {
 					2D50743B1AC546BB005AD163 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 6URH5NS3UE;
 						LastSwiftMigration = 0800;
 					};
 					2D5074501AC546BB005AD163 = {
@@ -212,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D5074471AC546BB005AD163 /* Main.storyboard in Resources */,
+				212E108A1F04F3FF00AE5923 /* TableViewCell.xib in Resources */,
 				2D50744C1AC546BB005AD163 /* LaunchScreen.xib in Resources */,
 				2D5074491AC546BB005AD163 /* Images.xcassets in Resources */,
 			);
@@ -232,8 +246,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D5074441AC546BB005AD163 /* ViewController.swift in Sources */,
+				212E10861F04F3BD00AE5923 /* TableViewController.swift in Sources */,
 				2D5074421AC546BB005AD163 /* AppDelegate.swift in Sources */,
 				2D5074631AC54740005AD163 /* SSRadioButtonsController.swift in Sources */,
+				212E10841F04F21A00AE5923 /* SSRadioButtonModel.swift in Sources */,
+				212E10891F04F3FF00AE5923 /* TableViewCell.swift in Sources */,
 				1A7373771B09218100CB5FBC /* SSRadioButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,9 +384,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6URH5NS3UE;
 				INFOPLIST_FILE = SampleProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.test.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssradiobutton.SampleProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -379,9 +397,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6URH5NS3UE;
 				INFOPLIST_FILE = SampleProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.test.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssradiobutton.SampleProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
